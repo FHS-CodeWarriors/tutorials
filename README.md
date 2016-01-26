@@ -1,5 +1,7 @@
 # Welcome Code Warriors
 
+<img src="./assets/FHS-CodeWarrios_GitHubAvatar.png" width="200px" height="200px">
+
 ## Getting Started
 
 ### Download and Install p5.js
