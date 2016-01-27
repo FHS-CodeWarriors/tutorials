@@ -19,8 +19,7 @@ function setup() {
 }
 
 function draw() {
-    var length = positions.length;
-    for (var i = 0; i < length; i++) {
+    for (var i = 0; i < positions.length; i++) {
         var pos = positions[i];
         var x = pos[0];
         var y = pos[1];
