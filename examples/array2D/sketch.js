@@ -19,11 +19,11 @@ function setup() {
 }
 
 function draw() {
-    background(180);
-
     var length = positions.length;
     for (var i = 0; i < length; i++) {
-        var p = positions[i];
-        ellipse(p[0], p[1], 50, 50);
+        var pos = positions[i];
+        var x = pos[0];
+        var y = pos[1];
+        ellipse(x, y, 50, 50);
     }
 }
