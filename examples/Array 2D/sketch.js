@@ -1,5 +1,5 @@
 /*
-A mulit-dimensional is an array that stores other arrays or arrays
+A multi-dimensional is an array that stores other arrays or arrays
 of arrays. In this example, x-y coordinate pairs are organized as
 2-element arrays. The 2-element array pairs are stored inside an
 array, forming a 2D array.
