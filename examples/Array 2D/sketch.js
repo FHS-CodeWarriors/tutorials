@@ -19,6 +19,8 @@ function setup() {
 }
 
 function draw() {
+    background(180);
+
     for (var i = 0; i < positions.length; i++) {
         var pos = positions[i];
         var x = pos[0];
