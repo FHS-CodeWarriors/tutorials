@@ -2,17 +2,15 @@ function setup() {
     createCanvas(500, 500);
     textAlign(CENTER, CENTER);
     strokeCap(SQUARE);
+    translate(width / 2.0, height / 2.0);
 }
 
 function draw() {
     background(180);
 
-    // Center clock
-    push();
-    translate(width / 2.0, height / 2.0);
-
     // Draw clock
     fill(255);
+    stroke(0);
     strokeWeight(4);
     ellipse(0, 0, 450, 450);
 
@@ -54,14 +52,14 @@ function draw() {
     // Hour hand
     stroke(0);
     strokeWeight(4);
-    var t = hours / 12 * TAU + minutes / 60 * TAU / 12 - HALF_PI;
+    var t = (hours + minutes / 60 + seconds / 3600) * TAU / 12 - HALF_PI;
     var v = p5.Vector.fromAngle(t);
-    v.mult(120);
+    v.mult(127);
     line(0, 0, v.x, v.y);
 
     // Minute hand
     strokeWeight(2);
-    var t = minutes / 60 * TAU + seconds / 60 * TAU / 60 - HALF_PI;
+    var t = (minutes + seconds / 60 + ms / 1000 / 60) * TAU / 60 - HALF_PI;
     var v = p5.Vector.fromAngle(t);
     v.mult(205);
     line(0, 0, v.x, v.y);
@@ -69,7 +67,7 @@ function draw() {
     // Second hand
     stroke(255, 0, 0);
     strokeWeight(1);
-    var t = seconds / 60 * TAU + ms / 1000 * TAU / 60 - HALF_PI;
+    var t = (seconds + ms / 1000) * TAU / 60 - HALF_PI;
     var v = p5.Vector.fromAngle(t);
     v.mult(210);
     line(0, 0, v.x, v.y);
@@ -79,6 +77,4 @@ function draw() {
     stroke(0);
     noStroke();
     ellipse(0, 0, 20, 20);
-
-    pop();
 }
