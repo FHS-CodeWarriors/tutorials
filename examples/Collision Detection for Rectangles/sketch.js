@@ -1,5 +1,5 @@
-var r0 = new Rectangle(175, 200, 150, 100)
-var r1 = new Rectangle(100, 100, 50, 50);
+var r0 = {'x': 175, 'y': 200, 'w': 150, 'h': 100}
+var r1 = {'x': 100, 'y': 100, 'w': 50, 'h': 50};
 
 function setup() {
     createCanvas(500, 500);
@@ -19,26 +19,18 @@ function draw() {
     rect(r1.x, r1.y, r1.w, r1.h);
 
     // Display detection status
-    fill(0);
-    if (detectRectangleIntersection(r0, r1)) {
+    fill(255);
+    if (detectRectangleIntersection(r0.x, r0.y, r0.w, r0.h, r1.x, r1.y, r1.w, r1.h)) {
         text("Collision Detected", width / 2, height / 2);
     }
 }
 
-// Creates rectangle objects
-function Rectangle(x, y, w, h) {
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
-}
-
-// Detect interestion / collision
-function detectRectangleIntersection(r0, r1) {
+// Detect interesection / collision
+function detectRectangleIntersection(x0, y0, w0, h0, x1, y1, w1, h1) {
     return !(
-        r0.x > r1.x + r1.w ||
-        r0.x + r0.w < r1.x ||
-        r0.y > r1.y + r1.h ||
-        r0.y + r0.h < r1.y
+        x0 > x1 + w1 ||
+        x0 + w0 < x1 ||
+        y0 > y1 + h1 ||
+        y0 + h0 < y1
     );
 }
