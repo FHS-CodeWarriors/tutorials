@@ -9,21 +9,18 @@ function setup() {
     rectMode(CENTER);
     noStroke();
     background(0);
-    frameRate(10);
 }
 
 function draw() {
-    for (var i = 0; i < 32; i++) {
+    for (var i = 0; i < 8; i++) {
         var x = map(noise(nx), 0, 1, -width, 2 * width);
         var y = map(noise(ny), 0, 1, -height, 2 * height);
         var s = map(noise(nz), 0, 1, 5, 150);
         
         fill(0, 8);
         rect(x, y, s * 1.25, s * 1.25);
-        // ellipse(x, y, s * 1.25, s * 1.25);
         fill(fillColor);
         rect(x, y, s, s);
-        // ellipse(x, y, s, s);
 
         nx += nInc;
         ny += nInc;
